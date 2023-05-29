@@ -1,38 +1,22 @@
-# React-shop-cloudfront
+# Task 2. Serving SPA
 
-This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
+### Task link
+https://github.com/rolling-scopes-school/aws/blob/main/aws-developer/02_serving_spa/task.md
 
-- [Vite](https://vitejs.dev/) as a project bundler
-- [React](https://beta.reactjs.org/) as a frontend framework
-- [React-router-dom](https://reactrouterdotcom.fly.dev/) as a routing library
-- [MUI](https://mui.com/) as a UI framework
-- [React-query](https://react-query-v3.tanstack.com/) as a data fetching library
-- [Formik](https://formik.org/) as a form library
-- [Yup](https://github.com/jquense/yup) as a validation schema
-- [Vitest](https://vitest.dev/) as a test runner
-- [MSW](https://mswjs.io/) as an API mocking library
-- [Eslint](https://eslint.org/) as a code linting tool
-- [Prettier](https://prettier.io/) as a code formatting tool
-- [TypeScript](https://www.typescriptlang.org/) as a type checking tool
+## URLS
 
-## Available Scripts
+### S3 Static Site URL (manual deployment)
+http://nodejs-aws-shop-react-manual-96tm.s3-website.eu-north-1.amazonaws.com
 
-### `start`
+### S3 Static Site URL (automated CDK deployment, should return "403 Forbidden")
 
-Starts the project in dev mode with mocked API on local environment.
+http://nodejs-aws-shop-react-96tm.s3-website.eu-north-1.amazonaws.com
 
-### `build`
+### Cloudfront Distribution URL (automated CDK deployment)
 
-Builds the project for production in `dist` folder.
+https://d35z48cg6epmdi.cloudfront.net
 
-### `preview`
-
-Starts the project in production mode on local environment.
-
-### `test`, `test:ui`, `test:coverage`
-
-Runs tests in console, in browser or with coverage.
-
-### `lint`, `prettier`
-
-Runs linting and formatting for all files in `src` folder.
+## NPM scripts
+- build: npm run build
+- bootstrap: npm run cdk:bootstrap
+- deploy: npm run cdk:cloudfront:deploy
