@@ -3,7 +3,7 @@ import { CartItem } from "~/models/CartItem";
 import { Order } from "~/models/Order";
 import { AvailableProduct, Product } from "~/models/Product";
 
-export const products: Product[] = [
+const baseProducts = [
   {
     description: "Short Product Description1",
     id: "7567ec4b-b10c-48c5-9345-fc73c48a80aa",
@@ -42,9 +42,12 @@ export const products: Product[] = [
   },
 ];
 
-export const availableProducts: AvailableProduct[] = products.map(
+
+export const availableProducts: AvailableProduct[] = baseProducts.map(
   (product, index) => ({ ...product, count: index + 1 })
 );
+
+export const products: Product[] = [...availableProducts];
 
 export const cart: CartItem[] = [
   {
@@ -53,6 +56,7 @@ export const cart: CartItem[] = [
       id: "7567ec4b-b10c-48c5-9345-fc73c48a80aa",
       price: 24,
       title: "ProductOne",
+      count: 2
     },
     count: 2,
   },
@@ -62,6 +66,7 @@ export const cart: CartItem[] = [
       id: "7567ec4b-b10c-45c5-9345-fc73c48a80a1",
       price: 15,
       title: "ProductName",
+      count: 2
     },
     count: 5,
   },
